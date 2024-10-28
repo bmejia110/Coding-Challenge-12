@@ -49,3 +49,16 @@ function drawShape(e) {
     }
     ctx.stroke();
 }
+
+//Task 4: Add Color Selection and Canvas Clearing
+
+const colorInput = documnet.getElementById("colorinput");
+const clearButton = documnet.getElementById("clearDrawing");
+//input drawing color
+colorInput.addEventListener("input", ()=> {
+    ctx.strokeStyle = colorInput.value;
+});
+//clear canvas
+clearButton.addEventListener("click", ()=> {
+    ctx.clearRect(0,0, canvas.clientWidth, canvas.height);
+});
