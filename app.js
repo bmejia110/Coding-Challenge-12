@@ -21,3 +21,7 @@ toolInputs.forEach(tool => {
         drawingTool = document.querySelector("input[name="tool"]:checked").value;
     });
 });
+
+colorPicker.addEventListener("color", (e) => {
+    drawingColor = e.target.value;
+})
