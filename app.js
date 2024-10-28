@@ -25,3 +25,27 @@ toolInputs.forEach(tool => {
 colorPicker.addEventListener("color", (e) => {
     drawingColor = e.target.value;
 })
+
+//Task 3 :Implement Shape Dawing Logic
+
+function drawShape(e) {
+    if (!isDrawing) return;
+
+    ctx.clearRect(0,0, canvas.clientWidth, canvas.height);
+    ctx.beginPath();
+    ctx.strokeStyle.drawingColor;
+
+    switch(drawingTool) {
+        case "line":
+            ctx.moveTo(startX, startY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            break;
+        case "rectangle"
+        ctx.rect(startX, startY, e.offsetX - startX, e.offsetY - startY);
+        break;
+        case radius = Math.sqrt(Math.pow(e.offsetX - startX, 2)+ Math.pow(e.offsetY - startY, 2));
+        ctx.arc(startX, startY, radius, 0, Math.PI * 2);
+        break;
+    }
+    ctx.stroke();
+}
